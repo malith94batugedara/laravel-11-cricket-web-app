@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('grounds', function (Blueprint $table) {
             $table->id();
+            $table->string('ground_name');
+            $table->string('ground_location');
+            $table->integer('capacity');
+            $table->integer('number_of_gates');
+            $table->integer('number_of_matches_played');
             $table->timestamps();
         });
     }

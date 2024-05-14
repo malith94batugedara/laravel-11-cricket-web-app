@@ -8,7 +8,7 @@
               <div class="col-md-10">
             <a href="{{ route('players.all') }}"class="text text-warning mr-10">Players</a>
             <a class="text text-warning mr-10">Schedule</a>
-            <a class="text text-warning mr-10">Grounds</a>
+            <a href="{{ route('grounds.all') }}" class="text text-warning mr-10">Grounds</a>
             <a class="text text-warning mr-10">News</a>
             <a class="text text-warning mr-10">About</a>
             <a class="text text-warning mr-10">Contact</a>
