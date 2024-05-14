@@ -6,7 +6,7 @@
             <a href="{{ route('welcome') }}"><img src="{{ asset('assets/images/1.jpeg') }}" alt="Sri Lanka Cricket Image" class="float-start" width="100px"style="margin-right: 300px;margin-left: 30px"/></a>
               </div>
               <div class="col-md-10">
-            <a class="text text-warning mr-10">Players</a>
+            <a href="{{ route('players.all') }}"class="text text-warning mr-10">Players</a>
             <a class="text text-warning mr-10">Schedule</a>
             <a class="text text-warning mr-10">Grounds</a>
             <a class="text text-warning mr-10">News</a>

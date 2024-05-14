@@ -24,6 +24,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/delete-player', [PlayerController::class, 'destroy'])->name('player.delete'); 
 });
 
+Route::get('/cricket-all-players', [PlayerController::class, 'allPlayers'])->name('players.all');
+
 require __DIR__.'/auth.php';
 
 Route::get('/auth/{provider}/redirect',[ProviderController::class,'redirect']); 
