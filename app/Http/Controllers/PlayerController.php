@@ -43,6 +43,13 @@ class PlayerController extends Controller
 
     }
 
+    public function allPlayers(){
+
+        $players = Player::orderBy('debut_date', 'asc')->get();
+        return view('player.frontend.all',compact('players'));
+
+    }
+
     /**
      * Display the specified resource.
      */
