@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\ProviderController;
+use App\Http\Controllers\GroundController;
 use App\Http\Controllers\PlayerController;
 
 Route::get('/',[WelcomeController::class,'index'])->name('welcome');
@@ -22,9 +23,17 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit-players/{player_id}', [PlayerController::class, 'edit'])->name('player.edit');
     Route::post('/update-players/{player_id}', [PlayerController::class, 'update'])->name('player.update');
     Route::post('/delete-player', [PlayerController::class, 'destroy'])->name('player.delete'); 
+    Route::get('/add-grounds', [GroundController::class, 'create'])->name('ground.create');
+    Route::post('/add-grounds', [GroundController::class, 'store'])->name('ground.store');
+    Route::get('/all-grounds', [GroundController::class, 'index'])->name('ground.index');
+    Route::get('/edit-grounds/{ground_id}', [GroundController::class, 'edit'])->name('ground.edit');
+    Route::post('/update-grounds/{ground_id}', [GroundController::class, 'update'])->name('ground.update');
+    Route::post('/delete-ground', [GroundController::class, 'destroy'])->name('ground.delete');
 });
 
 Route::get('/cricket-all-players', [PlayerController::class, 'allPlayers'])->name('players.all');
+
+Route::get('/cricket-all-grounds', [GroundController::class, 'allGrounds'])->name('grounds.all');
 
 require __DIR__.'/auth.php';
 
