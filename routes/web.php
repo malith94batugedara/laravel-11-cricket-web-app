@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
@@ -43,6 +44,8 @@ Route::get('/cricket-all-players', [PlayerController::class, 'allPlayers'])->nam
 Route::get('/cricket-all-grounds', [GroundController::class, 'allGrounds'])->name('grounds.all');
 
 Route::get('/cricket-all-schedules', [ScheduleController::class, 'allSchedules'])->name('schedules.all');
+
+Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 require __DIR__.'/auth.php';
 
