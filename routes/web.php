@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\ProviderController;
 use App\Http\Controllers\GroundController;
 use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\ScheduleController;
 
 Route::get('/',[WelcomeController::class,'index'])->name('welcome');
 
@@ -29,11 +30,19 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit-grounds/{ground_id}', [GroundController::class, 'edit'])->name('ground.edit');
     Route::post('/update-grounds/{ground_id}', [GroundController::class, 'update'])->name('ground.update');
     Route::post('/delete-ground', [GroundController::class, 'destroy'])->name('ground.delete');
+    Route::get('/add-schedule', [ScheduleController::class, 'create'])->name('schedule.create');
+    Route::post('/add-schedule', [ScheduleController::class, 'store'])->name('schedule.store');
+    Route::get('/all-schedules', [ScheduleController::class, 'index'])->name('schedule.index');
+    Route::get('/edit-schedule/{schedule_id}', [ScheduleController::class, 'edit'])->name('schedule.edit');
+    Route::post('/update-schedule/{schedule_id}', [ScheduleController::class, 'update'])->name('schedule.update');
+    Route::post('/delete-schedule', [ScheduleController::class, 'destroy'])->name('schedule.delete'); 
 });
 
 Route::get('/cricket-all-players', [PlayerController::class, 'allPlayers'])->name('players.all');
 
 Route::get('/cricket-all-grounds', [GroundController::class, 'allGrounds'])->name('grounds.all');
+
+Route::get('/cricket-all-schedules', [ScheduleController::class, 'allSchedules'])->name('schedules.all');
 
 require __DIR__.'/auth.php';
 
