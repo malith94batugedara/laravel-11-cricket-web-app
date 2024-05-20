@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\ProviderController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GroundController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\ScheduleController;
 
@@ -38,6 +39,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit-schedule/{schedule_id}', [ScheduleController::class, 'edit'])->name('schedule.edit');
     Route::post('/update-schedule/{schedule_id}', [ScheduleController::class, 'update'])->name('schedule.update');
     Route::post('/delete-schedule', [ScheduleController::class, 'destroy'])->name('schedule.delete'); 
+    Route::get('/add-news', [NewsController::class, 'create'])->name('news.create');
+    Route::post('/add-news', [NewsController::class, 'store'])->name('news.store');
+    Route::get('/all-news', [NewsController::class, 'index'])->name('news.index');
+    Route::get('/edit-news/{new_id}', [NewsController::class, 'edit'])->name('news.edit');
+    Route::post('/update-news/{new_id}', [NewsController::class, 'update'])->name('news.update');
+    Route::post('/delete-news', [NewsController::class, 'destroy'])->name('news.delete');
+
+
 });
 
 Route::get('/cricket-all-players', [PlayerController::class, 'allPlayers'])->name('players.all');
@@ -51,6 +60,8 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 Route::post('/contact/store', [ContactController::class, 'store'])->name('contact.register');
+
+Route::get('/cricket-all-news', [NewsController::class, 'allNews'])->name('news.all');
 
 require __DIR__.'/auth.php';
 
