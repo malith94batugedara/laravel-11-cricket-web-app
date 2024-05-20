@@ -11,7 +11,7 @@
     <table class="table">
 
         <tr style="color: yellow">
-                    <th>Schdule Name</th>
+                    <th>Schedule Name</th>
                     <th>Time Period</th>
                     <th>Country</th>
                     <th>Num Of Staff</th>

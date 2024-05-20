@@ -54,7 +54,7 @@ class ScheduleController extends Controller
     }
 
     public function allSchedules(){
-        $schedules = Schedule::orderBy('num_of_staff', 'desc')->get();
+        $schedules = Schedule::orderBy('depart_date', 'desc')->get();
         return view('schedule.frontend.all',compact('schedules'));
     }
     /**
