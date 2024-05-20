@@ -11,7 +11,7 @@
             <a href="{{ route('grounds.all') }}" class="text text-warning mr-10">Grounds</a>
             <a class="text text-warning mr-10">News</a>
             <a href="{{ route('about') }}" class="text text-warning mr-10">About</a>
-            <a class="text text-warning mr-10">Contact</a>
+            <a href="{{ route('contact') }}" class="text text-warning mr-10">Contact</a>
             @auth
                 <a
                     href="{{ url('/dashboard') }}"

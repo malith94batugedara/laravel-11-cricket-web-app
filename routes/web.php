@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\ProviderController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GroundController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\ScheduleController;
@@ -46,6 +47,10 @@ Route::get('/cricket-all-grounds', [GroundController::class, 'allGrounds'])->nam
 Route::get('/cricket-all-schedules', [ScheduleController::class, 'allSchedules'])->name('schedules.all');
 
 Route::get('/about', [AboutController::class, 'index'])->name('about');
+
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+
+Route::post('/contact/store', [ContactController::class, 'store'])->name('contact.register');
 
 require __DIR__.'/auth.php';
 
