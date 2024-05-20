@@ -18,7 +18,7 @@
             <label style="color: yellow">Number of staff</label>
             <input type="text" name="num_of_staff" class="form-control" required/>
             <label style="color: yellow">Departure Date</label>
-            <input type="date" name="deprt_date" class="form-control" required/><br/>
+            <input type="date" name="deprt_date" class="form-control" required/>
             <label style="color: yellow">Arrival Date</label>
             <input type="date" name="arrive_date" class="form-control" required/><br/>
 
